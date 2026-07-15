@@ -1,0 +1,10 @@
+Package: com.0xd1ce.fridalauncher
+Name: Frida Launcher
+Version: 2.0
+Architecture: iphoneos-arm64
+Description: Manage frida-server on jailbroken iOS devices with a single tap.
+Maintainer: 0xd1ce
+Author: 0xd1ce
+Section: Utilities
+Depends: firmware (>= 14.0)
+Icon: file:///Applications/FridaLauncher.app/AppIcon60x60@2x.png

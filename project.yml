@@ -1,0 +1,33 @@
+# XcodeGen spec — run `xcodegen generate` in this directory to produce FridaLauncher.xcodeproj.
+# This is the primary/build-in-Xcode path. See Makefile for the Theos (.deb) alternative.
+name: FridaLauncher
+options:
+  bundleIdPrefix: com.0xd1ce
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+
+# No external packages: frida-server is installed via `dpkg`, so no in-app
+# decompression (and thus no SWCompression) is needed.
+
+targets:
+  FridaLauncher:
+    type: application
+    platform: iOS
+    sources:
+      - path: FridaLauncher
+    info:
+      path: FridaLauncher/App/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.0xd1ce.fridalauncher
+        MARKETING_VERSION: "2.0"
+        CURRENT_PROJECT_VERSION: "3"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        # Pin the platform explicitly so xcodebuild always finds a device destination.
+        SDKROOT: iphoneos
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        # For jailbreak signing you typically sign manually with ldid after build:
+        CODE_SIGN_ENTITLEMENTS: entitlements.plist
+        CODE_SIGNING_ALLOWED: "NO"
