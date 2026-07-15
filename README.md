@@ -9,7 +9,7 @@ A native **Swift / SwiftUI** port of the Android [Frida Launcher](https://github
 > system paths. This is by design and cannot be worked around in a normal App Store app.
 
 ---
-
+![Frida Launcher](https://raw.githubusercontent.com/0xd1ce/Frida-Launcher/main/Screenshot.png)
 ## What it does
 
 Same feature set as the Android app, retargeted for iOS:
